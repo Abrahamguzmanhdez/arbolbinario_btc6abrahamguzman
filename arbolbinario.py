@@ -65,3 +65,51 @@ class Arbol:
 
     def buscar(self, busqueda):
         return self.__buscar(self.raiz, busqueda)
+
+class Nodo:
+    def __init__(self, dato):
+        # "dato" puede ser de cualquier tipo, incluso un objeto si se sobrescriben los operadores de comparación
+        self.dato = dato
+        self.izquierda = None
+        self.derecha = None
+def __agregar_recursivo(self, nodo, dato):
+    if dato < nodo.dato:
+        if nodo.izquierda is None:
+            nodo.izquierda = Nodo(dato)
+        else:
+            self.__agregar_recursivo(nodo.izquierda, dato)
+    else:
+        if nodo.derecha is None:
+            nodo.derecha = Nodo(dato)
+        else:
+            self.__agregar_recursivo(nodo. derecha, dato)
+def __buscar(self, nodo, busqueda):
+    if nodo is None:
+        return None
+    if nodo.dato == busqueda:
+        return nodo
+    if busqueda < nodo.dato:
+        return self.__buscar(nodo.izquierda, busqueda)
+    else:
+        return self.__buscar(nodo.derecha, busqueda)
+arbol = Arbol("Luis")
+arbol.agregar("María José")
+arbol.agregar("Maggie")
+arbol.agregar("Leon")
+arbol.agregar("Cuphead")
+arbol.agregar("Aloy")
+arbol.agregar("Jack")
+nombre = input("Ingresa algo para agregar al árbol: ")
+arbol.agregar(nombre)
+arbol.preorden()
+arbol.inorden()
+arbol.postorden()
+# Búsqueda
+busqueda = input("Busca algo en el árbol: ")
+nodo = arbol.buscar(busqueda)
+if nodo is None:
+    print(f"{busqueda} no existe")
+else:
+    print(f"{busqueda} sí existe")
+
+
